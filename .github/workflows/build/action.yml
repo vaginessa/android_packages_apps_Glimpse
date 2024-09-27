@@ -13,7 +13,7 @@ runs:
 
     - name: Build with Gradle
       shell: bash
-      run: ./gradlew assembleDebug
+      run: ./gradlew assembleRelease
 
     - name: Generate Android.bp
       shell: bash
@@ -24,7 +24,7 @@ runs:
           exit -1
         fi
 
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
-        name: app-debug.apk
-        path: app/build/outputs/apk/debug/app-debug.apk
+        name: app.apk
+        path: app/build/outputs/apk/release/app.apk
